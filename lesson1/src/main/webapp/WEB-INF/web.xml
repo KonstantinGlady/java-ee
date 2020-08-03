@@ -5,5 +5,17 @@
          version="4.0">
 
   <display-name>Archetype Created Web Application</display-name>
+  <!--<error-page>
+    <exception-type>java.lang.Exception</exception-type>
+    <location>/errorHandler</location>
+  </error-page>-->
+  <error-page>
+    <error-code>404</error-code>
+    <location>/error_404</location>
+  </error-page>
+  <error-page>
+    <error-code>403</error-code>
+    <location>/error_403</location>
+  </error-page>
 </web-app>
 
