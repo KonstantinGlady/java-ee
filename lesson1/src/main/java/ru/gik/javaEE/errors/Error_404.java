@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.Writer;
 
+
 @WebServlet(urlPatterns = "/error_404")
 public class Error_404 extends HttpServlet {
 
