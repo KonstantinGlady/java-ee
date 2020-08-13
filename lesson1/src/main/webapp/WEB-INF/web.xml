@@ -17,5 +17,14 @@
     <error-code>403</error-code>
     <location>/error_403</location>
   </error-page>
+<!--  <servlet>
+    <servlet-name>Calc</servlet-name>
+    <servlet-class>ru.gik.javaEE.servlets.calc.Calc</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Calc</servlet-name>
+    <url-pattern>/calc</url-pattern>
+  </servlet-mapping>-->
+
 </web-app>
 
