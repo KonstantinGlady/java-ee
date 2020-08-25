@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+
+    <title>Facelet Title</title>
+</h:head>
+<h:body>
+    <div class="container">
+        <h:link value=" Product " outcome="products.xhtml"/>
+        <h:link value=" Categories " outcome="categories.xhtml"/>
+        <h:link value=" Orders " outcome="index.xhtml"/>
+    </div>
+
+    <div class="container">
+        <h:form id="productForm">
+
+            <div class="coll-12">
+                <h:dataTable value="#{productController.getProducts()}" styleClass="table table-striped" var="prod">
+                    <h:column>
+                        <f:facet name="header">name</f:facet>
+                        #{prod.name}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">price</f:facet>
+                        #{prod.price}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">description</f:facet>
+                        #{prod.description}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Action</f:facet>
+                        <h:commandButton value="Edit" styleClass="btn btn-warning"
+                                         action="#{productController.edit(prod)}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Action</f:facet>
+                        <h:commandButton value="Delete" action="#{productController.delete(prod)}"
+                                         styleClass="btn btn-danger">
+                        <f:ajax event="click" render="productForm"/>
+                        </h:commandButton>
+                    </h:column>
+                </h:dataTable>
+            </div>
+            <div class="coll-12">
+                <a class="btn btn-primary" href="product.xhtml">add product</a>
+            </div>
+        </h:form>
+    </div>
+</h:body>
+</html>
+
