@@ -27,7 +27,7 @@
             <br/>
             <h:outputLabel for="price">price</h:outputLabel>
             <h:inputText id="price" value="#{productController.product.price}">
-                <f:validateRegex pattern="^([0-9])$"/>
+                <!--<f:validateRegex pattern="^([0-9])$"/>-->
                 <f:convertNumber/>
             </h:inputText>
             <h:message for="price" style="color: red"/>
